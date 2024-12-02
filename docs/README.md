@@ -432,23 +432,6 @@ These core measures calculate the number of emergency services arrivals over a p
 in the current data context. Additional measures create a filtered context of dates for various periods using the same pattern as 
 for the **Total Patient Days** measure.    
 
-### ED Arrivals
-![Card with ED arrivals counts](images/ed_arrivals.jpg)    
-Encounters to emergency services are loaded with the ED Visits table data. This report displays metrics and visuals with the number 
-of visits per month for different periods.    
-
-```
-Count ED Arrivals = DISTINCTCOUNTNOBLANK('ED Visit'[EncounterID])
-
-Avg Count ED Arrivals Per Month = 
-  AVERAGEX(DISTINCT('Report Calendar'[Year Month #])
-           , [Count ED Arrivals])
-```    
-These core measures calculate the number of emergency services arrivals over a period and the average number of visits per month. 
-**AVERAGEX** totals the visits by month using a list of distinct year-month values, then averages those totals across the months 
-in the current data context. Additional measures create a filtered context of dates for various periods using the same pattern used 
-for the **Total Patient Days** measure.    
-
 ### Left Without Being Seen %
 ![Card with LWBS rates](images/lwbs.jpg)    
 The **Left Without Being Seen %** (LWBS) measure tracks the number of patients leave the emergency services department 
